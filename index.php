@@ -2,13 +2,14 @@
 /*
 *
 * This is a example of a Smugmug call getting an album lists with a download button.
+* @author David Leal <dleal@medianewsgroup.com>
 *
 */
 // Set these to be your secrets
-$consumer_key      = 'OZZhUs9OMoN8YIYzaRtH0ytQJIri4ds2';
-$consumer_secret   = '0f69057fe634415ef440b1d1067a69dd';
-$user_token        = 'bf2242e08efa71275b2d4b7b771a5d89';
-$user_token_secret = '92d166494dcfaf84c050fd94212c4b5aca92d07d13f75abb8d2423c15226c56b';
+$consumer_key      = '';
+$consumer_secret   = '';
+$user_token        = '';
+$user_token_secret = '';
 
 // This checks that you have OAuth installed
 if (!class_exists('OAuth')) { 
