@@ -25,10 +25,10 @@ if ( isset( $_GET['page'] ) && $_GET['page'] != 0  ){
 // Define your request - this is a GET with ImageSizes expansion
 $uri     = 'https://api.smugmug.com/api/v2/user/ParkRecordPhoto!albums' . $count;
 $method  = 'GET';
-$params  = []; // you'll put post/patch values here
-$headers = [
+$params  = array(); // you'll put post/patch values here
+$headers = array(
     'Accept' => 'application/json',	// set to 'text/xml' if you’d rather have an XML response
-];
+);
 
 // Get your OAuth instance
 $oauth = new OAuth($consumer_key, $consumer_secret); // documentation here http://php.net/manual/en/oauth.construct.php
@@ -72,6 +72,7 @@ $data = json_decode($jsonString, true);
 <div class="container">
 	<div class="page-header">
 		<h1>Albums from Smugmug</h1>
+		<p>This is a simple tool to list albums from Park Record and with the functionality of download full albums in .zip files. Note: Some times Smugmug doesn't like when you download several albums in a short period of time, so it will be good to download 1 by 1 and wait one minute between downloads. If you want to go by the traditional way, just go to the gallery URL and click download full gallery.
 	</div>
 	<div class="bs-component">
               <table class="table table-striped table-hover ">

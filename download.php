@@ -18,10 +18,10 @@ if (!class_exists('OAuth')) {
 // Define your request - this is a GET with ImageSizes expansion
 $uri     = 'https://api.smugmug.com/api/v2/album/'.$_GET['album_key'].'!download';
 $method  = 'PUT';
-$params  = []; // you'll put post/patch values here
-$headers = [
+$params  = array(); // you'll put post/patch values here
+$headers = array(
     'Accept' => 'application/json',	// set to 'text/xml' if you’d rather have an XML response
-];
+);
 
 // Get your OAuth instance
 $oauth = new OAuth($consumer_key, $consumer_secret); // documentation here http://php.net/manual/en/oauth.construct.php
@@ -46,7 +46,7 @@ Also look at these resources for more interesting data about the request such as
 $jsonString = $oauth->getLastResponse();
 $data = json_decode($jsonString, true);
 
-//var_dump( $data['Response']['Download'][0]['WebUri'] );
+//var_dump( $data['Response']['Download'][0]['WebUri'] ); exit;
 
 $url = $data['Response']['Download'][0]['WebUri'];
 echo 'URL:' . $url;
